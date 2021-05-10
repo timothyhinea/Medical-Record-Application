@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns:th="www.thymeleaf.org">
+   <head>
+      <title>Medical Database</title>
+      <style>
+         .input-line{
+            font: 20px Arial, sans-serif;
+           } 
+           
+         #form{
+            font: 20px Arial, sans-serif;
+            background: #CFD8DC;
+            color: #455A64;
+         }
+         
+         body{
+            text-align: center;
+            background-color:#607D8B;
+            font-family: 'Roboto', sans-serif;
+            color: #FFFFFF;
+         }
+         
+         .button{
+            background-color:#FFFFFF;
+            width: 100px;
+            height: 30px;
+            font-weight: bold;
+            color: #607D8B;
+            text-align: center;
+            margin-right: 25px;
+         }
+         
+         .button:hover{
+            background-color: #607D8B;
+            color: #FFFFFF;
+         }
+         
+         h3{
+            padding-top: 25px;
+         }
+         
+         table{
+            margin: auto;
+         }
+         
+         th{
+            min-width: 200px;
+         }
+         
+      </style>
+   </head>
+   <body>
+      <h1>MEDICAL DATABASE</h1>
+         <form id="form" action="#" th:action="@{/requestdrugreport}"
+            th:object="${daterange}" method="post">
+            <br><h2>Drug Report</h2>
+            <h3>Enter date range: </h3>
+            <input class= "input-line" type= "date" th:field= "*{startDate}"/> 
+            - <input class= "input-line" type= "date" th:field= "*{endDate}"/>
+            <br><br>
+            <input class = "button" type= "submit" value= "SUBMIT"/>
+            <br><br>
+         </form>   
+   </body>
+</html>

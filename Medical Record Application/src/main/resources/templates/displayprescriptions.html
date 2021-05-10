@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<title>Medical Database</title>
+<style>
+.input-line {
+	font: 20px Arial, sans-serif;
+}
+#form {
+	font: 20px Arial, sans-serif;
+	background: #CFD8DC;
+	color: #455A64;
+}
+body {
+	text-align: center;
+	background-color: #607D8B;
+	font-family: 'Roboto', sans-serif;
+	color: #FFFFFF;
+}
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+.button {
+	background-color: #FFFFFF;
+	width: 100px;
+	height: 30px;
+	font-weight: bold;
+	color: #607D8B;
+	text-align: center;
+	margin-right: 25px;
+}
+.button:hover {
+	background-color: #607D8B;
+	color: #FFFFFF;
+}
+h3 {
+	padding-top: 25px;
+}
+</style>
+</head>
+<body>
+	<h1>MEDICAL DATABASE</h1>
+	<p>
+	<form id="form" action="#" th:action="@{/displayprescriptions}"
+		th:object="${prescription}" method="post">
+		<h3>Display and refill prescription:</h3>
+		<br> Patient's SSN: <br> <input class="input-line"
+			type="number" th:field="*{patientSSN}" /> <br> Prescription #:
+		<br> <input class="input-line" type="number"
+			th:field="*{prescriptionID}" /> <br> <br> <input
+			class="button" type="submit" value="SUBMIT" /> <br>
+		<h3>Prescriptions</h3>
+		<table border="1">
+			<tr>
+				<th>Drug ID</th>
+				<th>Refills</th>
+			</tr>
+			<div th:each="prescription : ${prescriptions}">
+				<tr>
+					<td th:inline="text">[[${prescription.prescriptionID}]]</td>
+					<td th:inline="text">[[${prescription.refills}]]</td>
+				</tr>
+			</div>
+		</table>
+		<br>
+	</form>
+	</p>
+</body>
+</html>

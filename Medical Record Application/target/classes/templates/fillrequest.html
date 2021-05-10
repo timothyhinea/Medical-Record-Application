@@ -1,0 +1,60 @@
+<!doctype html>
+<html xmlns:th="www.thymeleaf.org">
+   <head>
+      <title>Medical Database</title>
+      <style>
+         .input-line{
+            font: 20px Arial, sans-serif;
+           } 
+           
+         #form{
+            font: 20px Arial, sans-serif;
+            background: #CFD8DC;
+            color: #455A64;
+         }
+         
+         body{
+            text-align: center;
+            background-color:#607D8B;
+            font-family: 'Roboto', sans-serif;
+            color: #FFFFFF;
+         }
+         
+         .button{
+            background-color:#FFFFFF;
+            width: 100px;
+            height: 30px;
+            font-weight: bold;
+            color: #607D8B;
+            text-align: center;
+            margin-right: 25px;
+         }
+         
+         .button:hover{
+            background-color: #607D8B;
+            color: #FFFFFF;
+         }
+         
+         h3{
+            padding-top: 25px;
+         }
+         
+      </style>
+   </head>
+   <body>
+      <h1>MEDICAL DATABASE</h1>
+      <p>
+         <form id="form" action="#" th:action="@{/fillrequest}"
+            th:object="${fillrequest}" method="post">
+            <h3>Please enter the information for the prescription you wish to fill:</h3>
+            Prescription #: <br> <input class= "input-line" type= "number" th:field= "*{prescriptionID}"/>
+            <br><br>
+            Patient's SSN: <br> <input class= "input-line" type= "number" th:field= "*{patientSSN}"/>
+            <br><br>
+            <input class = "button" type= "submit" value= "SUBMIT"/>
+            <br><br>
+            <br><br>
+         </form>   
+      </p>
+   </body>
+</html>

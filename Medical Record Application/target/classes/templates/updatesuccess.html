@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns:th="www.thymeleaf.org">
+ <head>
+      <title>Medical Database</title>
+      <style>
+         .input-line{
+            font: 20px Arial, sans-serif;
+           }
+         #form{
+            font: 20px Arial, sans-serif;
+            background: #CFD8DC;
+            color: #455A64;
+         }
+         body{
+            text-align: center;
+            background-color:#607D8B;
+            font-family: 'Roboto', sans-serif;
+            color: #FFFFFF;
+         }
+         #submit{
+            background-color:#FFFFFF;
+            width: 100px;
+            height: 30px;
+            font-weight: bold;
+            color: #607D8B;
+         }
+         #submit:hover{
+            background-color: #607D8B;
+            color: #FFFFFF;
+         }
+         h3{
+            padding-top: 25px;
+         }
+      </style>
+   </head>
+<body>
+  <p th:inline="text">[[${count}]] rows inserted.</p>
+</body></html>

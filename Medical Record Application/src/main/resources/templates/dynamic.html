@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<title>Welcome to my dynamic page!</title>
+</head>
+<body>
+<h1>Welcome to my dynamic page!</h1>
+<p th:inline="text">Hello [[${name}]]. Nice to see you today.</p>
+<p th:inline="text">Current time:[[${time}]]</p>
+</body>
+</html>

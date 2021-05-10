@@ -1,0 +1,63 @@
+<!doctype html>
+<html xmlns:th="www.thymeleaf.org">
+   <head>
+      <title>Medical Database</title>
+      <style>
+         .input-line{
+            font: 20px Arial, sans-serif;
+           } 
+           
+         #form{
+            font: 20px Arial, sans-serif;
+            background: #CFD8DC;
+            color: #455A64;
+         }
+         
+         body{
+            text-align: center;
+            background-color:#607D8B;
+            font-family: 'Roboto', sans-serif;
+            color: #FFFFFF;
+         }
+         
+         #submit{
+            background-color:#FFFFFF;
+            width: 100px;
+            height: 30px;
+            font-weight: bold;
+            color: #607D8B;
+         }
+         
+         #submit:hover{
+            background-color: #607D8B;
+            color: #FFFFFF;
+         }
+         
+         h3{
+            padding-top: 25px;
+         }
+         
+      </style>
+   </head>
+   <body>
+      <h1>MEDICAL DATABASE</h1>
+      <p>
+         <form id="form" action="#" th:action="@{/prescriptioninputform}" 
+            th:object="${prescription}" method="post">
+            <h3>Prescription Input Form</h3>
+            Doctor's SSN: <br> <input class= "input-line" type= "number" th:field= "*{doctorSSN}"/>
+            <br><br>
+            Patient's SSN: <br> <input class= "input-line" type= "number" th:field= "*{patientSSN}"/>
+            <br><br>
+            Drug Name: <br> <input class= "input-line" type= "text" th:field= "*{drugName}"/>
+            <br><br>
+            Quantity: <br> <input class= "input-line"type= "number" th:field= "*{quantity}"/>
+            <br><br>
+            Refills: <br> <input class= "input-line" type= "number" th:field= "*{refills}"/>
+            <br><br>
+            <input id= "submit" type= "submit" value= "SUBMIT"/><br><br>
+         </form>   
+      </p>
+   </body>
+</html>
+daddy is here
